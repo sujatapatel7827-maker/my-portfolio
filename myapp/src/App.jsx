@@ -27,16 +27,16 @@ function App() {
               <Hero />
               <About />
               <Skills />
-              <Services/>
-              <Projects/>
+              <Services />
+              <Projects />
               <Contact />
             </div>
           }
-          />
-        // ADMIN LOGIN
-         <Route path="/admin/login" element={<AdminLogin />} />
+        />
+        {/* ADMIN LOGIN */}
+        <Route path="/admin/login" element={<AdminLogin />} />
         {/* Admin Panel */}
-       <Route
+        <Route
           path="/admin"
           element={
             <ProtectedRoute>

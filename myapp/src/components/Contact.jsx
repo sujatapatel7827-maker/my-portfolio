@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SuccessModal from "./SuccessModal";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -7,7 +8,9 @@ export default function Contact() {
     message: "",
   });
 
-  const [loading, setLoading] = useState(false); // ✅ added only
+  const [loading, setLoading] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [submittedName, setSubmittedName] = useState("");
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -29,7 +32,8 @@ export default function Contact() {
       const data = await res.json();
 
       if (data.success) {
-        alert("Message sent successfully 🚀");
+        setSubmittedName(form.name);
+        setShowModal(true);
         setForm({ name: "", email: "", message: "" });
       }
     } catch (error) {
@@ -41,6 +45,12 @@ export default function Contact() {
 
   return (
     <section id="contact" className="contact">
+      <SuccessModal
+        show={showModal}
+        onClose={() => setShowModal(false)}
+        name={submittedName}
+      />
+
       <h2 className="contact-heading">Contact Me</h2>
       <div className="contact-underline"></div>
 

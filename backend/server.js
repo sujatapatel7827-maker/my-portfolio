@@ -5,10 +5,8 @@ require("dotenv").config();
 
 const app = express();
 
-app.use(cors({
-  origin: "http://localhost:5174",
-  methods: ["GET", "POST"],
-}));
+// Allow all origins to avoid CORS issues on different ports
+app.use(cors());
 app.use(express.json());
 
 mongoose
