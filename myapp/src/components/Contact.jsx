@@ -29,22 +29,32 @@ export default function Contact() {
         body: JSON.stringify(form),
       });
 
+      // Check if response is JSON
+      const contentType = res.headers.get("content-type");
+      if (!contentType || !contentType.includes("application/json")) {
+        const text = await res.text();
+        throw new Error(`Server Error (${res.status}): ${text.slice(0, 100)}...`); // Show first 100 chars of error
+      }
+
       const data = await res.json();
 
       if (data.success) {
         setSubmittedName(form.name);
         setShowModal(true);
         setForm({ name: "", email: "", message: "" });
+      } else {
+        throw new Error(data.message || "Submission failed");
       }
     } catch (error) {
-      alert("Something went wrong ❌");
+      console.error("Contact Form Error:", error);
+      alert(error.message || "Something went wrong ❌");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <section id="contact" className="contact">
+    <section id="contact" className="contact fade-in">
       <SuccessModal
         show={showModal}
         onClose={() => setShowModal(false)}
@@ -57,7 +67,7 @@ export default function Contact() {
       <div className="contact-wrapper">
 
         <div className="contact-info">
-          <div className="contact-info-card">
+          <div className="contact-info-card float">
             <span>📧</span>
             <div>
               <h4>Email</h4>
@@ -66,7 +76,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="contact-info-card">
+          <div className="contact-info-card float" style={{ animationDelay: "0.2s" }}>
             <span>📞</span>
             <div>
               <h4>Phone</h4>
@@ -75,7 +85,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="contact-info-card">
+          <div className="contact-info-card float" style={{ animationDelay: "0.4s" }}>
             <span>📍</span>
             <div>
               <h4>Location</h4>
@@ -85,7 +95,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <form className="contact-form-box" onSubmit={handleSubmit}>
+        <form className="contact-form-box glass-effect" onSubmit={handleSubmit}>
           <input
             type="text"
             name="name"
@@ -93,6 +103,7 @@ export default function Contact() {
             value={form.name}
             onChange={handleChange}
             required
+            className="input-field"
           />
 
           <input
@@ -102,6 +113,7 @@ export default function Contact() {
             value={form.email}
             onChange={handleChange}
             required
+            className="input-field"
           />
 
           <textarea
@@ -111,6 +123,7 @@ export default function Contact() {
             value={form.message}
             onChange={handleChange}
             required
+            className="input-field"
           />
 
           <button className="btn" disabled={loading}>

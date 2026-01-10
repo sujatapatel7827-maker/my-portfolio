@@ -32,15 +32,6 @@ router.post("/contact", async (req, res) => {
 });
 
 
-// GET all messages (ADMIN PANEL)
-router.get("/contact", async (req, res) => {
-  try {
-    const messages = await Message.find().sort({ createdAt: -1 });
-    res.json(messages);
-  } catch (error) {
-    console.error("CONTACT GET ERROR:", error);
-    res.status(500).json({ error: "Server error" });
-  }
-});
+
 
 module.exports = router;

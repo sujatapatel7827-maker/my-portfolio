@@ -2,17 +2,17 @@ import heroImg from "../assets/Sujata_pic.jpeg";
 
 export default function Hero() {
   return (
-    <section id="home" className="hero">
+    <section id="home" className="hero fade-in">
       <div className="hero-wrapper">
 
         {/* LEFT SIDE */}
         <div className="hero-left">
-          <h1 className="hero-name"> Hey <br />I’m <span>Sujata</span></h1>
+          <h1 className="hero-name"> Hey <br />I’m <span className="text-gradient">Sujata</span></h1>
           <p className="hero-role">I am a Java Full Stack Developer</p>
 
           <div className="hero-buttons">
             <button
-              className="btn"
+              className="btn float"
               onClick={() =>
                 document.getElementById("contact").scrollIntoView({ behavior: "smooth" })
               }
@@ -33,7 +33,7 @@ export default function Hero() {
 
         {/* RIGHT SIDE IMAGE */}
         <div className="hero-right">
-          <div className="hero-image-circle">
+          <div className="hero-image-circle float">
             <img src={heroImg} alt="Profile" />
           </div>
         </div>

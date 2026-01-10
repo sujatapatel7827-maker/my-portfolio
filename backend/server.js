@@ -1,3 +1,4 @@
+console.log("Starting server...");
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -9,13 +10,27 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDB Connected"))
-  .catch((err) => console.log(err));
-
+// Routes
 app.use("/api", require("./routes/contactRoute"));
+app.use("/api/admin", require("./routes/adminRoute"));
 
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
-});
+// Connect to MongoDB first, THEN start server
+const connectDB = async () => {
+  try {
+    console.log("⏳ Connecting to MongoDB...");
+    await mongoose.connect(process.env.MONGO_URI, {
+      serverSelectionTimeoutMS: 30000, // 30 seconds timeout
+    });
+    console.log("✅ MongoDB Connected Successfully");
+
+    app.listen(5001, () => {
+      console.log("🚀 Server running on port 5001");
+    });
+  } catch (err) {
+    console.error("❌ MongoDB Connection Error:", err.message);
+    console.error("Check your .env file and MongoDB Atlas Network Access settings.");
+    process.exit(1);
+  }
+};
+
+connectDB();

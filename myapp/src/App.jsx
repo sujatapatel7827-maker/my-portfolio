@@ -8,11 +8,9 @@ import Skills from "./components/Skills";
 import Services from "./components/Services";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
-
-import AdminDashboard from "./admin/AdminDashboard";
-import AdminLogin from "./admin/AdminLogin";
-import ProtectedRoute from "./admin/ProtectedRoute";
-
+import AdminLogin from "./components/AdminLogin";
+import AdminDashboard from "./components/AdminDashboard";
+import AdminSetup from "./components/AdminSetup";
 
 function App() {
   return (
@@ -33,17 +31,11 @@ function App() {
             </div>
           }
         />
-        {/* ADMIN LOGIN */}
-        <Route path="/admin/login" element={<AdminLogin />} />
-        {/* Admin Panel */}
-        <Route
-          path="/admin"
-          element={
-            <ProtectedRoute>
-              <AdminDashboard />
-            </ProtectedRoute>
-          }
-        />
+
+        {/* Admin Routes */}
+        <Route path="/admin/setup" element={<AdminSetup />} />
+        <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
       </Routes>
     </BrowserRouter>
   );
