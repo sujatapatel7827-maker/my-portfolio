@@ -20,7 +20,7 @@ export default function AdminDashboard() {
 
     const fetchMessages = async () => {
         try {
-            const response = await fetch("http://localhost:5001/api/admin/messages");
+            const response = await fetch("http://localhost:5000/api/admin/messages");
             const data = await response.json();
 
             if (data.success) {

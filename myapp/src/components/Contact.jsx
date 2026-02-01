@@ -21,7 +21,7 @@ export default function Contact() {
     setLoading(true);
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("http://localhost:5000/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -33,7 +33,7 @@ export default function Contact() {
       const contentType = res.headers.get("content-type");
       if (!contentType || !contentType.includes("application/json")) {
         const text = await res.text();
-        throw new Error(`Server Error (${res.status}): ${text.slice(0, 100)}...`); // Show first 100 chars of error
+        throw new Error(`Server Error (${res.status}): ${text.slice(0, 100)}...`);
       }
 
       const data = await res.json();
@@ -47,7 +47,18 @@ export default function Contact() {
       }
     } catch (error) {
       console.error("Contact Form Error:", error);
-      alert(error.message || "Something went wrong ❌");
+
+      let errorMessage = "Something went wrong ❌";
+
+      if (error.name === "TypeError" && error.message === "Failed to fetch") {
+        errorMessage = `⚠️ Server is currently offline at http://localhost:5000. Please start the backend.`;
+      } else if (error.message.includes("Database connection error")) {
+        errorMessage = "⚠️ Database is down. Your message couldn't be saved.";
+      } else {
+        errorMessage = error.message || "Something went wrong ❌";
+      }
+
+      alert(errorMessage);
     } finally {
       setLoading(false);
     }

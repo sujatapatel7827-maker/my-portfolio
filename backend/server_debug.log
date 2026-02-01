@@ -1,0 +1,9 @@
+Starting server...
+[dotenv@17.2.3] injecting env (2) from .env [2m-- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild[0m
+🚀 Server running on port 5000
+🔗 Health check: http://localhost:5000/health
+⏳ Connecting to MongoDB...
+❌ Error: Port 5000 is already in u📥 Contact request received:
+✅ Message saved successfully
+📥 Admin setup request received
+Request body:

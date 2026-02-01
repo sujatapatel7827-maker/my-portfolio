@@ -1,0 +1,6 @@
+﻿Starting server...
+[dotenv@17.2.3] injecting env (2) from .env -- tip: ΓÜÖ∩╕Å  write to custom object with { processEnv: myObject }
+≡ƒÜÇ Server running on port 5000
+≡ƒöù Health check: http://localhost:5000/health
+ΓÅ│ Connecting to MongoDB...
+Γ£à MongoDB Connected Successfully

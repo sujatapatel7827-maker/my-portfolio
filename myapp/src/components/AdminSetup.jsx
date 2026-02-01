@@ -16,7 +16,7 @@ export default function AdminSetup() {
         setLoading(true);
 
         try {
-            const response = await fetch("http://localhost:5001/api/admin/setup", {
+            const response = await fetch("http://localhost:5000/api/admin/setup", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -35,7 +35,7 @@ export default function AdminSetup() {
                 setError(data.message || "Setup failed");
             }
         } catch (err) {
-            setError("❌ Connection error. Make sure backend is running on port 5001.");
+            setError("❌ Connection error. Make sure backend is running on port 5000.");
         } finally {
             setLoading(false);
         }

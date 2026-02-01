@@ -1,0 +1,7 @@
+Starting server...
+[dotenv@17.2.3] injecting env (2) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+🚀 Server running on port 5001
+🔗 Health check: http://localhost:5001/health
+⏳ Connecting to MongoDB...
+✅ MongoDB Connected Successfully
+^C
