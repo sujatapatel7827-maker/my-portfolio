@@ -1,7 +1,0 @@
-Starting server...
-[dotenv@17.2.3] injecting env (2) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
-⏳ Connecting to MongoDB...
-MONGO_URI: Defined
-✅ MongoDB Connected Successfully
-🚀 Server running on port 5001
-^C

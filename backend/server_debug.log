@@ -1,8 +1,0 @@
-Starting server...
-[dotenv@17.2.3] injecting env (2) from .env [2m-- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops[0m
-🚀 Server running on port 5000
-🔗 Health check: http://localhost:5000/health
-⏳ Connecting to MongoDB...
-❌ Error: Port 5000 is already in use.
-👉 Try killing the process using port 5000 or use a different port.
-✅ MongoDB Connected Successfully

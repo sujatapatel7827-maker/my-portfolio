@@ -1,5 +1,0 @@
-Connecting to MongoDB...
-Connected to MongoDB.
-Found admin users:
-Username: admin, Password: admin123
-Done.

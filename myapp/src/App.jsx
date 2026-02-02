@@ -15,24 +15,19 @@ import AdminSetup from "./components/AdminSetup";
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        {/* Portfolio */}
-        <Route
-          path="/"
-          element={
-            <div>
-              <Navbar />
-              <Hero />
-              <About />
-              <Skills />
-              <Services />
-              <Projects />
-              <Contact />
-            </div>
-          }
-        />
+      {/* Navbar sab pages pe dikhega */}
+      <Navbar />
 
-        {/* Admin Routes */}
+      <Routes>
+        {/* Public Pages */}
+        <Route path="/" element={<Hero />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/skills" element={<Skills />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
+
+        {/* Admin Pages */}
         <Route path="/admin/setup" element={<AdminSetup />} />
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />

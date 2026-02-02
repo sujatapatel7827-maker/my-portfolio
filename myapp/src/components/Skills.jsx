@@ -22,7 +22,12 @@ export default function Skills() {
 
           <div className="skill">
             <span>JavaScript</span>
-            <div className="bar"><div style={{ width: "80%" }}></div></div>
+            <div className="bar"><div style={{ width: "70%" }}></div></div>
+          </div>
+
+          <div className="skill">
+            <span>React Js</span>
+            <div className="bar"><div style={{ width: "85%" }}></div></div>
           </div>
         </div>
 

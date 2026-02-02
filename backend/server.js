@@ -1,76 +1,82 @@
-const fs = require('fs');
-const util = require('util');
-const logFile = fs.createWriteStream(__dirname + '/server_debug.log', { flags: 'w' });
-const logStdout = process.stdout;
+// 🔴 MUST BE FIRST LINES
+const path = require("path");
+require("dotenv").config({
+  path: path.resolve(__dirname, ".env"),
+});
 
-console.log = function (d) { //
-  logFile.write(util.format(d) + '\n');
-  logStdout.write(util.format(d) + '\n');
-};
-
-console.error = function (d) { //
-  logFile.write(util.format(d) + '\n');
-  logStdout.write(util.format(d) + '\n');
-};
-
-console.log("Starting server...");
+// ================== IMPORTS ==================
+const fs = require("fs");
+const util = require("util");
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-require("dotenv").config();
+
+// ================== LOG SETUP (OPTIONAL) ==================
+const logFile = fs.createWriteStream(path.join(__dirname, "server.log"), {
+  flags: "a",
+});
+const logStdout = process.stdout;
+
+console.log = function (...args) {
+  const message = util.format(...args);
+  logFile.write(message + "\n");
+  logStdout.write(message + "\n");
+};
+
+console.error = console.log;
+
+// ================== DEBUG ENV (REMOVE LATER IF YOU WANT) ==================
+console.log("CWD:", process.cwd());
+console.log("ENV FILE:", path.resolve(__dirname, ".env"));
+console.log("MONGO_URI:", process.env.MONGO_URI);
+
+// ================== APP SETUP ==================
+console.log("Starting server...");
 
 const app = express();
-
-// Allow all origins to avoid CORS issues
 app.use(cors());
 app.use(express.json());
 
-// Routes
+// ================== ROUTES ==================
 app.use("/api", require("./routes/contactRoute"));
 app.use("/api/admin", require("./routes/adminRoute"));
 
-// Health check
+// ================== HEALTH CHECK ==================
 app.get("/health", (req, res) => {
   res.json({
     status: "ok",
     mongodb: mongoose.connection.readyState === 1 ? "connected" : "disconnected",
-    port: 5000
+    port: process.env.PORT || 5000,
   });
 });
 
-const PORT = 5000;
+// ================== SERVER START ==================
+const PORT = process.env.PORT || 5000;
 
-// Start server first
-const server = app.listen(PORT, () => {
+const server = app.listen(PORT, async () => {
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`🔗 Health check: http://localhost:${PORT}/health`);
 
-  // Then connect to MongoDB
   const mongoUri = process.env.MONGO_URI;
+
   if (!mongoUri) {
-    console.error("❌ CRITICAL ERROR: MONGO_URI is not defined in .env file!");
-    console.error("The server is running but database features will fail.");
-    return;
+    console.error("❌ CRITICAL ERROR: MONGO_URI is missing in .env file");
+    process.exit(1);
   }
 
-  console.log("⏳ Connecting to MongoDB...");
-  mongoose.connect(mongoUri, {
-    serverSelectionTimeoutMS: 5000,
-  })
-    .then(() => console.log("✅ MongoDB Connected Successfully"))
-    .catch(err => {
-      console.error("❌ MongoDB Connection Error:", err.message);
-      console.error("👉 Please check your .env file and MongoDB Atlas settings.");
-      console.error("👉 Ensure your IP address is whitelisted in MongoDB Atlas.");
-      console.error("⚠️ The server is still running, but API calls requiring the database will fail.");
-    });
+  try {
+    await mongoose.connect(mongoUri);
+    console.log("✅ MongoDB Connected Successfully");
+  } catch (err) {
+    console.error("❌ MongoDB Connection Failed:", err.message);
+    process.exit(1);
+  }
 });
 
-// Handle server errors
-server.on('error', (error) => {
-  if (error.code === 'EADDRINUSE') {
-    console.error(`❌ Error: Port ${PORT} is already in use.`);
-    console.error(`👉 Try killing the process using port ${PORT} or use a different port.`);
+// ================== SERVER ERROR HANDLING ==================
+server.on("error", (error) => {
+  if (error.code === "EADDRINUSE") {
+    console.error(`❌ Port ${PORT} is already in use`);
   } else {
     console.error("❌ Server Error:", error.message);
   }

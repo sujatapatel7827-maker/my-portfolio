@@ -1,28 +1,29 @@
+import { NavLink, useNavigate } from "react-router-dom";
+
 export default function Navbar() {
-  const handleLetsTalk = () => {
-    const contactSection = document.getElementById("contact");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const navigate = useNavigate();
+
   return (
     <nav className="navbar">
       {/* Logo */}
-      <div className="navbar-logo">Sujata_codes.</div>
+      <div className="navbar-logo" onClick={() => navigate("/")}>
+        Sujata_codes.
+      </div>
 
-      {/* Center Menu */}
+      {/* Menu */}
       <ul className="navbar-menu">
-        <li className="#home"><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-
+        <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/about">About</NavLink></li>
+        <li><NavLink to="/skills">Skills</NavLink></li>
+        <li><NavLink to="/services">Services</NavLink></li>
+        <li><NavLink to="/projects">Projects</NavLink></li>
+        <li><NavLink to="/contact">Contact</NavLink></li>
       </ul>
 
       {/* Button */}
-      <button className="navbar-btn" onClick={handleLetsTalk}>Let’s Talk</button>
+      <button className="navbar-btn" onClick={() => navigate("/contact")}>
+        Let’s Talk
+      </button>
     </nav>
   );
 }
