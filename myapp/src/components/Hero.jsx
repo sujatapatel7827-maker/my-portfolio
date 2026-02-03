@@ -1,4 +1,4 @@
-import heroImg from "../assets/Sujata_pic.jpeg";
+import heroImg from "../assets/Profile.webp";
 
 export default function Hero() {
   return (

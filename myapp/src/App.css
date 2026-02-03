@@ -20,9 +20,9 @@ body {
 
 /*============== NAVBAR ===============*/
 .navbar {
-   position: fixed; 
-   z-index: 100;
-  width:100%;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
   background: #020617;
   padding: 10px 20px;
 
@@ -160,12 +160,10 @@ body {
   border-radius: 50%;
   padding: 6px;
 
-  background: linear-gradient(
-    135deg,
-    #2dd4bf,
-    #22d3ee,
-    #3b82f6
-  );
+  background: linear-gradient(135deg,
+      #2dd4bf,
+      #22d3ee,
+      #3b82f6);
 
   display: flex;
   align-items: center;
@@ -188,9 +186,11 @@ body {
   0% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-12px);
   }
+
   100% {
     transform: translateY(0px);
   }
@@ -216,7 +216,7 @@ body {
 .about-tag {
   color: #22d3ee;
   text-align: center;
-  font-size:30px;
+  font-size: 30px;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 12px;
@@ -231,6 +231,7 @@ body {
 .about-title span {
   color: #2dd4bf;
 }
+
 .skills-underline {
   width: 60px;
   height: 3px;
@@ -269,6 +270,7 @@ body {
   margin-bottom: 12px;
   font-size: 15px;
 }
+
 .about-info-card {
   display: flex;
   align-items: center;
@@ -300,10 +302,12 @@ body {
     grid-template-columns: 1fr;
   }
 }
-  .about-title {
-    font-size: 34px;
-  } */
 
+.about-title {
+  font-size: 34px;
+}
+
+*/
 /* ===== SKILLS SECTION ===== */
 
 .skills {
@@ -311,7 +315,8 @@ body {
   text-align: center;
 }
 .skills-spacer {
-  height: 80px;   /* navbar height ke barabar */
+  height: 80px;
+  /* navbar height ke barabar */
   width: 100%;
 }
 .skills-heading {
@@ -320,14 +325,12 @@ body {
   color: #22d3ee;
   text-align: center;
 }
-
 .skills-underline {
   width: 60px;
   height: 3px;
   background: #22d3ee;
   margin: 10px auto 60px;
 }
-
 /* GRID */
 .skills-grid {
   max-width: 1100px;
@@ -344,38 +347,35 @@ body {
   text-align: left;
   opacity: 0;
   transform: translateY(40px);
-  transition: all 0.35s ease;
   animation: fadeUp 0.8s ease forwards;
 }
 /* thoda delay har card ke liye */
-.skills-card:nth-child(1) { animation-delay: 0.1s; }
-.skills-card:nth-child(2) { animation-delay: 0.2s; }
-.skills-card:nth-child(3) { animation-delay: 0.3s; }
-.skills-card:nth-child(4) { animation-delay: 0.4s; }
+.skills-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.skills-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.skills-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.skills-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
 @keyframes fadeUp {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-
 .skills-card:hover {
-  transform: translateY(-10px) scale(1.02);
+  transform: translateY(-6px);
   border-color: #22d3ee;
-  box-shadow: 0 20px 40px rgba(34, 211, 238, 0.15);
 }
 .skills-card h3 {
   color: #22d3ee;
   margin-bottom: 20px;
   font-size: 18px;
-}
-.skills-card:hover h3 {
-  color: #2dd4bf;
-}
-
-/* progress bar glow on hover */
-.skills-card:hover .bar div {
-  filter: brightness(1.2);
 }
 /* SKILL BAR */
 .skill {
@@ -589,6 +589,7 @@ body {
     padding: 80px 6%;
   }
 }
+
 /* ===== CONTACT SECTION ===== */
 
 .contact {
@@ -690,7 +691,8 @@ body {
 /* ===== DOWNLOAD CV FIX ===== */
 .about-download-btn {
   display: inline-block;
-  margin-top: 80px;     /* 👈 button niche aa jayega */
+  margin-top: 80px;
+  /* 👈 button niche aa jayega */
   margin-left: 0;
   border: 1px solid #22d3ee;
   color: #22d3ee;
