@@ -11,14 +11,6 @@ export default function Hero() {
           <p className="hero-role">I am a Java Full Stack Developer</p>
 
           <div className="hero-buttons">
-            <button
-              className="btn float"
-              onClick={() =>
-                document.getElementById("contact").scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              Let’s Talk
-            </button>
             <a
               href="/sujataCV.pdf"
               download

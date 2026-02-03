@@ -23,8 +23,8 @@ export default function Projects() {
             </p>
             <div className="project-tags">
               <span>React</span>
-              <span>Node</span>
-              <span>MongoDB</span>
+              <span>Spring Boot</span>
+              <span>My SQL</span>
             </div>
           </div>
         </div>
@@ -69,7 +69,8 @@ export default function Projects() {
             </p>
             <div className="project-tags">
               <span>React</span>
-              <span>CSS</span>
+               <span>Node, Express</span>
+              <span>MongoDB</span>
             </div>
           </div>
         </div>

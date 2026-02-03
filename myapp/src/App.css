@@ -310,11 +310,15 @@ body {
   padding: 100px 10%;
   text-align: center;
 }
-
+.skills-spacer {
+  height: 80px;   /* navbar height ke barabar */
+  width: 100%;
+}
 .skills-heading {
   font-size: 36px;
   font-weight: 800;
   color: #22d3ee;
+  text-align: center;
 }
 
 .skills-underline {
@@ -332,22 +336,47 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
 }
-
-/* CARD */
 .skills-card {
   background: #020617;
   border: 1px solid #1f2937;
   padding: 28px;
   border-radius: 18px;
   text-align: left;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.35s ease;
+  animation: fadeUp 0.8s ease forwards;
+}
+/* thoda delay har card ke liye */
+.skills-card:nth-child(1) { animation-delay: 0.1s; }
+.skills-card:nth-child(2) { animation-delay: 0.2s; }
+.skills-card:nth-child(3) { animation-delay: 0.3s; }
+.skills-card:nth-child(4) { animation-delay: 0.4s; }
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
+.skills-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: #22d3ee;
+  box-shadow: 0 20px 40px rgba(34, 211, 238, 0.15);
+}
 .skills-card h3 {
   color: #22d3ee;
   margin-bottom: 20px;
   font-size: 18px;
 }
+.skills-card:hover h3 {
+  color: #2dd4bf;
+}
 
+/* progress bar glow on hover */
+.skills-card:hover .bar div {
+  filter: brightness(1.2);
+}
 /* SKILL BAR */
 .skill {
   margin-bottom: 16px;

@@ -1,6 +1,7 @@
 export default function Skills() {
   return (
     <section id="skills" className="skills">
+       <div className="skills-spacer"></div>
       <h2 className="skills-heading">Skills & Expertise</h2>
       <div className="skills-underline"></div>
 
