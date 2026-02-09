@@ -1,5 +1,4 @@
 import { useState } from "react";
-import SuccessModal from "./SuccessModal";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -9,8 +8,7 @@ export default function Contact() {
   });
 
   const [loading, setLoading] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-  const [submittedName, setSubmittedName] = useState("");
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -23,42 +21,28 @@ export default function Contact() {
     try {
       const res = await fetch("http://localhost:5000/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-
-      // Check if response is JSON
-      const contentType = res.headers.get("content-type");
-      if (!contentType || !contentType.includes("application/json")) {
-        const text = await res.text();
-        throw new Error(`Server Error (${res.status}): ${text.slice(0, 100)}...`);
-      }
 
       const data = await res.json();
 
       if (data.success) {
-        setSubmittedName(form.name);
-        setShowModal(true);
         setForm({ name: "", email: "", message: "" });
+
+        // success message show
+        setShowSuccess(true);
+
+        // 3 sec baad hide
+        setTimeout(() => {
+          setShowSuccess(false);
+        }, 3000);
       } else {
-        throw new Error(data.message || "Submission failed");
+        alert("Submission failed ❌");
       }
     } catch (error) {
-      console.error("Contact Form Error:", error);
-
-      let errorMessage = "Something went wrong ❌";
-
-      if (error.name === "TypeError" && error.message === "Failed to fetch") {
-        errorMessage = `⚠️ Server is currently offline at http://localhost:5000. Please start the backend.`;
-      } else if (error.message.includes("Database connection error")) {
-        errorMessage = "⚠️ Database is down. Your message couldn't be saved.";
-      } else {
-        errorMessage = error.message || "Something went wrong ❌";
-      }
-
-      alert(errorMessage);
+      console.error(error);
+      alert("Server error ❌");
     } finally {
       setLoading(false);
     }
@@ -66,17 +50,11 @@ export default function Contact() {
 
   return (
     <section id="contact" className="contact fade-in">
-      <SuccessModal
-        show={showModal}
-        onClose={() => setShowModal(false)}
-        name={submittedName}
-      />
-
       <h2 className="contact-heading">Contact Me</h2>
       <div className="contact-underline"></div>
 
       <div className="contact-wrapper">
-
+        {/* LEFT SIDE SAME */}
         <div className="contact-info">
           <div className="contact-info-card float">
             <span>📧</span>
@@ -87,7 +65,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="contact-info-card float" style={{ animationDelay: "0.2s" }}>
+          <div className="contact-info-card float">
             <span>📞</span>
             <div>
               <h4>Phone</h4>
@@ -96,7 +74,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="contact-info-card float" style={{ animationDelay: "0.4s" }}>
+          <div className="contact-info-card float">
             <span>📍</span>
             <div>
               <h4>Location</h4>
@@ -106,6 +84,7 @@ export default function Contact() {
           </div>
         </div>
 
+        {/* RIGHT SIDE FORM */}
         <form className="contact-form-box glass-effect" onSubmit={handleSubmit}>
           <input
             type="text"
@@ -140,6 +119,13 @@ export default function Contact() {
           <button className="btn" disabled={loading}>
             {loading ? "Sending..." : "Send Message"}
           </button>
+
+          {/* ✅ ONLY THIS controls the message */}
+          {showSuccess && (
+            <p className="success-text">
+              Message Sent Successfully ✅
+            </p>
+          )}
         </form>
       </div>
     </section>

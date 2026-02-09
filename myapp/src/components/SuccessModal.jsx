@@ -3,7 +3,6 @@ export default function SuccessModal({ onClose }) {
     <div className="success-modal">
       <div className="success-box">
         <h2>Message Sent Successfully ✅</h2>
-        <button onClick={onClose}>Close</button>
       </div>
     </div>
   );
