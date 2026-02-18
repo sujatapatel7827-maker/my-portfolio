@@ -1,7 +1,9 @@
 import { NavLink, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export default function Navbar() {
   const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <nav className="navbar">
@@ -10,20 +12,37 @@ export default function Navbar() {
         Sujata_codes.
       </div>
 
-      {/* Menu */}
-      <ul className="navbar-menu">
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/about">About</NavLink></li>
-        <li><NavLink to="/skills">Skills</NavLink></li>
-        <li><NavLink to="/services">Services</NavLink></li>
-        <li><NavLink to="/projects">Projects</NavLink></li>
-        <li><NavLink to="/contact">Contact</NavLink></li>
+      {/* MENU */}
+      <ul className={`navbar-menu ${menuOpen ? "active" : ""}`}>
+        <li onClick={() => setMenuOpen(false)}>
+          <NavLink to="/">Home</NavLink>
+        </li>
+        <li onClick={() => setMenuOpen(false)}>
+          <NavLink to="/about">About</NavLink>
+        </li>
+        <li onClick={() => setMenuOpen(false)}>
+          <NavLink to="/skills">Skills</NavLink>
+        </li>
+        <li onClick={() => setMenuOpen(false)}>
+          <NavLink to="/services">Services</NavLink>
+        </li>
+        <li onClick={() => setMenuOpen(false)}>
+          <NavLink to="/projects">Projects</NavLink>
+        </li>
+        <li onClick={() => setMenuOpen(false)}>
+          <NavLink to="/contact">Contact</NavLink>
+        </li>
       </ul>
 
-      {/* Button */}
+      {/* BUTTON */}
       <button className="navbar-btn" onClick={() => navigate("/contact")}>
         Let’s Talk
       </button>
+
+      {/* HAMBURGER */}
+      <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? "✖" : "☰"}
+      </div>
     </nav>
   );
 }

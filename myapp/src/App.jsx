@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
 import Navbar from "./components/Navbar";
@@ -17,7 +17,7 @@ import Contact from "./components/Contact";
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
       {/* Navbar sab pages pe dikhega */}
       <Navbar />
 
@@ -38,7 +38,7 @@ function App() {
         {/* <Route path="/admin" element={<AdminLogin />} /> */}
         {/* <Route path="/admin/dashboard" element={<AdminDashboard />} /> */}
       </Routes>
-    </BrowserRouter>
+    </>
   );
 }
 
