@@ -78,7 +78,7 @@ export default function Contact() {
             <span>📍</span>
             <div>
               <h4>Location</h4>
-              <p>Karol, Baoa Nagar</p>
+              <p>New Delhi</p>
               <small>View on Map</small>
             </div>
           </div>
