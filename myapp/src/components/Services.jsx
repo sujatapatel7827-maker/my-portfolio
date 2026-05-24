@@ -1,86 +1,100 @@
+import { FaLaptopCode, FaServer, FaDatabase, FaJava, FaReact, FaGitAlt } from "react-icons/fa";
+
 export default function Services() {
   return (
     <section id="services" className="services">
-      <h2 className="services-heading">What I Do</h2>
+      <h2 className="services-heading">Professional Services</h2>
       <div className="services-underline"></div>
 
       <div className="services-grid">
 
+        {/* Service 1 */}
         <div className="service-card">
-          <div className="service-icon">💻</div>
-          <h3>Web Development</h3>
+          <div className="service-icon">
+            <FaLaptopCode />
+          </div>
+          <h3>Full-Stack Web Development</h3>
           <p>
-            Building responsive and scalable web applications using modern
-            technologies with clean UI and performance in mind.
+            Building responsive, feature-rich web applications with React or Angular on the frontend and Spring Boot on the backend.
           </p>
           <div className="service-tags">
-            <span>Responsive Design</span>
-            <span>SEO Friendly</span>
+            <span>React / Angular</span>
+            <span>Spring Boot</span>
           </div>
         </div>
 
+        {/* Service 2 */}
         <div className="service-card">
-          <div className="service-icon">📱</div>
-          <h3>Mobile Development</h3>
+          <div className="service-icon">
+            <FaServer />
+          </div>
+          <h3>RESTful API & Microservices</h3>
           <p>
-            Developing fast and reliable mobile-friendly applications with
-            smooth user experience and modern architecture.
+            Designing highly scalable, secure, and modular Microservices architectures with RESTful APIs, JWT authentication, and Spring Cloud.
           </p>
           <div className="service-tags">
-            <span>Cross Platform</span>
-            <span>User Friendly</span>
+            <span>Spring Cloud</span>
+            <span>JWT Security</span>
           </div>
         </div>
 
+        {/* Service 3 */}
         <div className="service-card">
-          <div className="service-icon">🎨</div>
-          <h3>UI/UX Design</h3>
+          <div className="service-icon">
+            <FaDatabase />
+          </div>
+          <h3>Database Architecture</h3>
           <p>
-            Designing intuitive user interfaces with a focus on usability,
-            accessibility, and modern design principles.
+            Developing robust databases using MySQL, PostgreSQL, or MongoDB, optimizing queries, and ensuring seamless JPA/Hibernate integrations.
           </p>
           <div className="service-tags">
-            <span>User Centered</span>
-            <span>Accessibility</span>
+            <span>MySQL & MongoDB</span>
+            <span>JPA / Hibernate</span>
           </div>
         </div>
 
+        {/* Service 4 */}
         <div className="service-card">
-          <div className="service-icon">⚡</div>
-          <h3>Performance Optimization</h3>
+          <div className="service-icon">
+            <FaJava />
+          </div>
+          <h3>Enterprise Java Solutions</h3>
           <p>
-            Optimizing applications for speed, scalability, and smooth
-            performance across all devices.
+            Designing secure, robust, and transactional backend business logic using Core & Advanced Java, Spring Boot, and MVC patterns.
           </p>
           <div className="service-tags">
-            <span>Fast Loading</span>
-            <span>Scalable</span>
+            <span>Java Full-Stack</span>
+            <span>OOP Design</span>
           </div>
         </div>
 
+        {/* Service 5 */}
         <div className="service-card">
-          <div className="service-icon">🛒</div>
-          <h3>E-commerce Solutions</h3>
+          <div className="service-icon">
+            <FaReact />
+          </div>
+          <h3>UI Component Engineering</h3>
           <p>
-            Creating secure and scalable e-commerce platforms with payment
-            integration and admin dashboards.
+            Developing interactive, pixel-perfect user interfaces using modern CSS frameworks, TypeScript, Bootstrap, and reusable component libraries.
           </p>
           <div className="service-tags">
-            <span>Secure Payments</span>
-            <span>Admin Panel</span>
+            <span>TypeScript</span>
+            <span>Bootstrap / CSS</span>
           </div>
         </div>
 
+        {/* Service 6 */}
         <div className="service-card">
-          <div className="service-icon">🔗</div>
-          <h3>API Development</h3>
+          <div className="service-icon">
+            <FaGitAlt />
+          </div>
+          <h3>DevOps & Version Control</h3>
           <p>
-            Designing and developing RESTful APIs to connect applications
-            efficiently and securely.
+            Configuring reliable builds and versioning using Git/GitHub, Maven dependency management, Docker containers, and CI/CD pipelines.
           </p>
           <div className="service-tags">
-            <span>REST APIs</span>
-            <span>Integration</span>
+            <span>Git & GitHub</span>
+            <span>Docker & Maven</span>
           </div>
         </div>
 
@@ -88,3 +102,4 @@ export default function Services() {
     </section>
   );
 }
+

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaPaperPlane } from "react-icons/fa";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -29,14 +30,10 @@ export default function Contact() {
 
       if (data.success) {
         setForm({ name: "", email: "", message: "" });
-
-        // success message show
         setShowSuccess(true);
-
-        // 3 sec baad hide
         setTimeout(() => {
           setShowSuccess(false);
-        }, 3000);
+        }, 4000);
       } else {
         alert("Submission failed ❌");
       }
@@ -54,80 +51,105 @@ export default function Contact() {
       <div className="contact-underline"></div>
 
       <div className="contact-wrapper">
-        {/* LEFT SIDE SAME */}
+        {/* LEFT SIDE: Clickable Contact Info Cards */}
         <div className="contact-info">
-          <div className="contact-info-card float">
-            <span>📧</span>
+          
+          <a href="mailto:sujatapatel7827@gmail.com" className="contact-info-card">
+            <div className="contact-icon">
+              <FaEnvelope />
+            </div>
             <div>
               <h4>Email</h4>
               <p>sujatapatel7827@gmail.com</p>
-              <small>Send Email</small>
+              <small>Send an Email &rarr;</small>
             </div>
-          </div>
+          </a>
 
-          <div className="contact-info-card float">
-            <span>📞</span>
+          <a href="tel:+918076801200" className="contact-info-card">
+            <div className="contact-icon">
+              <FaPhoneAlt />
+            </div>
             <div>
               <h4>Phone</h4>
-              <p>+91 9XXXXXXXXX</p>
-              <small>Call Now</small>
+              <p>+91 80768012XX</p>
+              <small>Call or WhatsApp &rarr;</small>
             </div>
-          </div>
+          </a>
 
-          <div className="contact-info-card float">
-            <span>📍</span>
+          <a 
+            href="https://maps.google.com/?q=New+Delhi" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="contact-info-card"
+          >
+            <div className="contact-icon">
+              <FaMapMarkerAlt />
+            </div>
             <div>
               <h4>Location</h4>
-              <p>New Delhi</p>
-              <small>View on Map</small>
+              <p>New Delhi, India</p>
+              <small>View on Google Maps &rarr;</small>
             </div>
-          </div>
+          </a>
+          
         </div>
 
-        {/* RIGHT SIDE FORM */}
+        {/* RIGHT SIDE: Styled Input Form */}
         <form className="contact-form-box glass-effect" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={form.name}
-            onChange={handleChange}
-            required
-            className="input-field"
-          />
+          <div className="form-input-wrapper">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              value={form.name}
+              onChange={handleChange}
+              required
+              className="input-field"
+            />
+          </div>
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={form.email}
-            onChange={handleChange}
-            required
-            className="input-field"
-          />
+          <div className="form-input-wrapper">
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              value={form.email}
+              onChange={handleChange}
+              required
+              className="input-field"
+            />
+          </div>
 
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            rows="5"
-            value={form.message}
-            onChange={handleChange}
-            required
-            className="input-field"
-          />
+          <div className="form-input-wrapper">
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              rows="5"
+              value={form.message}
+              onChange={handleChange}
+              required
+              className="input-field"
+            />
+          </div>
 
-          <button className="btn" disabled={loading}>
-            {loading ? "Sending..." : "Send Message"}
+          <button className="contact-btn" disabled={loading}>
+            {loading ? (
+              "Sending..."
+            ) : (
+              <>
+                Send Message <FaPaperPlane />
+              </>
+            )}
           </button>
 
-          {/* ✅ ONLY THIS controls the message */}
           {showSuccess && (
-            <p className="success-text">
-              Message Sent Successfully ✅
-            </p>
+            <div className="contact-success-banner">
+              <span>✅</span> Message Sent Successfully! Notification email delivered to owner.
+            </div>
           )}
         </form>
       </div>
     </section>
   );
 }
+

@@ -5,3 +5,187 @@ Starting server...
 🚀 Server running on port 5000
 🔗 Health check: http://localhost:5000/health
 ✅ MongoDB Connected Successfully
+CWD: C:\JavaSpringBoot(v.s.)\my-portfolio\backend
+ENV FILE: C:\JavaSpringBoot(v.s.)\my-portfolio\backend\.env
+MONGO_URI: mongodb://localhost:27017/portfolioDB
+Starting server...
+🚀 Server running on port 5000
+🔗 Health check: http://localhost:5000/health
+✅ MongoDB Connected Successfully
+CWD: C:\JavaSpringBoot(v.s.)\my-portfolio\backend
+ENV FILE: C:\JavaSpringBoot(v.s.)\my-portfolio\backend\.env
+MONGO_URI: mongodb://localhost:27017/portfolioDB
+Starting server...
+🚀 Server running on port 5000
+🔗 Health check: http://localhost:5000/health
+✅ MongoDB Connected Successfully
+CWD: C:\JavaSpringBoot(v.s.)\my-portfolio\backend
+ENV FILE: C:\JavaSpringBoot(v.s.)\my-portfolio\backend\.env
+MONGO_URI: mongodb://localhost:27017/portfolioDB
+Starting server...
+🚀 Server running on port 5000
+🔗 Health check: http://localhost:5000/health
+✅ MongoDB Connected Successfully
+CWD: C:\JavaSpringBoot(v.s.)\my-portfolio\backend
+ENV FILE: C:\JavaSpringBoot(v.s.)\my-portfolio\backend\.env
+MONGO_URI: mongodb://localhost:27017/portfolioDB
+Starting server...
+🚀 Server running on port 5000
+🔗 Health check: http://localhost:5000/health
+✅ MongoDB Connected Successfully
+📥 Contact request received: {
+  name: 'Anu',
+  email: 'anu@987gmsil.com',
+  message: 'HI IA ANU CAN I TOLD YOU ?'
+}
+✅ Message saved successfully
+CWD: C:\JavaSpringBoot(v.s.)\my-portfolio\backend
+ENV FILE: C:\JavaSpringBoot(v.s.)\my-portfolio\backend\.env
+MONGO_URI: mongodb://localhost:27017/portfolioDB
+Starting server...
+🚀 Server running on port 5000
+🔗 Health check: http://localhost:5000/health
+✅ MongoDB Connected Successfully
+📥 Contact request received: {
+  name: 'Anu',
+  email: 'anu@987gmsil.com',
+  message: 'HI CAN I TOLD YOU?'
+}
+✅ Message saved successfully
+📥 Contact request received: {
+  name: 'Anu',
+  email: 'anu@987gmsil.com',
+  message: 'HI CAN I TOLD YOU?'
+}
+✅ Message saved successfully
+CWD: C:\JavaSpringBoot(v.s.)\my-portfolio\backend
+ENV FILE: C:\JavaSpringBoot(v.s.)\my-portfolio\backend\.env
+MONGO_URI: mongodb://localhost:27017/portfolioDB
+Starting server...
+🚀 Server running on port 5000
+🔗 Health check: http://localhost:5000/health
+✅ MongoDB Connected Successfully
+CWD: C:\JavaSpringBoot(v.s.)\my-portfolio\backend
+ENV FILE: C:\JavaSpringBoot(v.s.)\my-portfolio\backend\.env
+MONGO_URI: mongodb://localhost:27017/portfolioDB
+Starting server...
+🚀 Server running on port 5000
+🔗 Health check: http://localhost:5000/health
+✅ MongoDB Connected Successfully
+📥 Contact request received: {
+  name: 'anu',
+  email: 'anu@987gmsil.com',
+  message: 'HI I AM ANU can i told you ?'
+}
+✅ Message saved successfully
+📥 Contact request received: { name: 'anu', email: 'anu@987gmsil.com', message: 'HELLO' }
+✅ Message saved successfully
+📥 Contact request received: { name: 'soniya', email: 'soniya@1212', message: 'HI Soniya' }
+✅ Message saved successfully
+📥 Contact request received: { name: 'Soniya', email: 'soniya@1212', message: 'HELLO' }
+✅ Message saved successfully
+📥 Contact request received: { name: 'Abhay', email: 'abhay@5486', message: 'HAY' }
+✅ Message saved successfully
+CWD: C:\JavaSpringBoot(v.s.)\my-portfolio\backend
+ENV FILE: C:\JavaSpringBoot(v.s.)\my-portfolio\backend\.env
+MONGO_URI: mongodb://localhost:27017/portfolioDB
+Starting server...
+🚀 Server running on port 5000
+🔗 Health check: http://localhost:5000/health
+✅ MongoDB Connected Successfully
+CWD: C:\JavaSpringBoot(v.s.)\my-portfolio\backend
+ENV FILE: C:\JavaSpringBoot(v.s.)\my-portfolio\backend\.env
+MONGO_URI: mongodb://localhost:27017/portfolioDB
+Starting server...
+🚀 Server running on port 5000
+🔗 Health check: http://localhost:5000/health
+✅ MongoDB Connected Successfully
+CWD: C:\JavaSpringBoot(v.s.)\my-portfolio\backend
+ENV FILE: C:\JavaSpringBoot(v.s.)\my-portfolio\backend\.env
+MONGO_URI: mongodb://localhost:27017/portfolioDB
+Starting server...
+🚀 Server running on port 5000
+🔗 Health check: http://localhost:5000/health
+✅ MongoDB Connected Successfully
+CWD: C:\JavaSpringBoot(v.s.)\my-portfolio\backend
+ENV FILE: C:\JavaSpringBoot(v.s.)\my-portfolio\backend\.env
+MONGO_URI: mongodb://localhost:27017/portfolioDB
+Starting server...
+🚀 Server running on port 5000
+🔗 Health check: http://localhost:5000/health
+✅ MongoDB Connected Successfully
+CWD: C:\JavaSpringBoot(v.s.)\my-portfolio\backend
+ENV FILE: C:\JavaSpringBoot(v.s.)\my-portfolio\backend\.env
+MONGO_URI: mongodb://localhost:27017/portfolioDB
+Starting server...
+🚀 Server running on port 5000
+🔗 Health check: http://localhost:5000/health
+✅ MongoDB Connected Successfully
+CWD: C:\JavaSpringBoot(v.s.)\my-portfolio\backend
+ENV FILE: C:\JavaSpringBoot(v.s.)\my-portfolio\backend\.env
+MONGO_URI: mongodb://localhost:27017/portfolioDB
+Starting server...
+🚀 Server running on port 5000
+🔗 Health check: http://localhost:5000/health
+✅ MongoDB Connected Successfully
+📥 Contact request received: {
+  name: 'Test Verification User',
+  email: 'test-verify@example.com',
+  message: 'Hello! This is a test message to verify the admin reply functionality.'
+}
+✅ Message saved successfully
+⚠️ SMTP credentials not configured in backend/.env. Creating temporary Ethereal Email account...
+✅ Email sent successfully! MessageId: <c4c2d02e-c85c-ba36-2988-446214b9e850@portfolio.com>
+🔗 Ethereal Preview URL: https://ethereal.email/message/ahMkKo5FEF1TI62OahMkLqUBtdys4WdxAAAAAe30mIlZk7gQPEVv9a9jzQY
+CWD: C:\JavaSpringBoot(v.s.)\my-portfolio\backend
+ENV FILE: C:\JavaSpringBoot(v.s.)\my-portfolio\backend\.env
+MONGO_URI: mongodb://localhost:27017/portfolioDB
+Starting server...
+🚀 Server running on port 5000
+🔗 Health check: http://localhost:5000/health
+✅ MongoDB Connected Successfully
+CWD: C:\JavaSpringBoot(v.s.)\my-portfolio\backend
+ENV FILE: C:\JavaSpringBoot(v.s.)\my-portfolio\backend\.env
+MONGO_URI: mongodb://localhost:27017/portfolioDB
+Starting server...
+🚀 Server running on port 5000
+🔗 Health check: http://localhost:5000/health
+✅ MongoDB Connected Successfully
+CWD: C:\JavaSpringBoot(v.s.)\my-portfolio\backend
+ENV FILE: C:\JavaSpringBoot(v.s.)\my-portfolio\backend\.env
+MONGO_URI: mongodb://localhost:27017/portfolioDB
+Starting server...
+🚀 Server running on port 5000
+🔗 Health check: http://localhost:5000/health
+✅ MongoDB Connected Successfully
+CWD: C:\JavaSpringBoot(v.s.)\my-portfolio\backend
+ENV FILE: C:\JavaSpringBoot(v.s.)\my-portfolio\backend\.env
+MONGO_URI: mongodb://localhost:27017/portfolioDB
+Starting server...
+🚀 Server running on port 5000
+🔗 Health check: http://localhost:5000/health
+✅ MongoDB Connected Successfully
+CWD: C:\JavaSpringBoot(v.s.)\my-portfolio\backend
+ENV FILE: C:\JavaSpringBoot(v.s.)\my-portfolio\backend\.env
+MONGO_URI: mongodb://localhost:27017/portfolioDB
+Starting server...
+🚀 Server running on port 5000
+🔗 Health check: http://localhost:5000/health
+✅ MongoDB Connected Successfully
+CWD: C:\JavaSpringBoot(v.s.)\my-portfolio\backend
+ENV FILE: C:\JavaSpringBoot(v.s.)\my-portfolio\backend\.env
+MONGO_URI: mongodb://localhost:27017/portfolioDB
+Starting server...
+🚀 Server running on port 5000
+🔗 Health check: http://localhost:5000/health
+✅ MongoDB Connected Successfully
+📥 Contact request received: {
+  name: 'Dev Checker',
+  email: 'dev-checker@testmail.com',
+  message: 'Hello! I am checking if the admin gets an email notification when I submit this form. Please verify.'
+}
+✅ Message saved successfully
+⚠️ SMTP credentials not configured in backend/.env. Creating temporary Ethereal Email account...
+✅ Email sent successfully! MessageId: <fbce6a27-9ddb-2bc5-8f85-cd3a60977a89@portfolio.com>
+🔗 Ethereal Preview URL: https://ethereal.email/message/ahNNgo5FEF1TJ-OpahNNhaUBtdys4d3mAAAAAUNImBuwsLCo43RoU9IM6io
+✅ Admin notification email sent successfully
