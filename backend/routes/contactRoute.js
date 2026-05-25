@@ -32,10 +32,11 @@ router.post("/contact", async (req, res) => {
 
     // Send email notification to admin
     try {
+      const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";
       await sendEmail({
         to: process.env.ADMIN_EMAIL || "s80768012@gmail.com",
         subject: `New Portfolio Message from ${name}`,
-        text: `You have received a new contact message on your portfolio.\n\nFrom: ${name} (${email})\n\nMessage:\n"${message}"\n\nTo view and reply to this message, visit the Admin Dashboard: http://localhost:5173/admin`,
+        text: `You have received a new contact message on your portfolio.\n\nFrom: ${name} (${email})\n\nMessage:\n"${message}"\n\nTo view and reply to this message, visit the Admin Dashboard: ${frontendUrl}/admin`,
         html: `
           <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
             <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 24px; text-align: center; color: white;">
@@ -52,7 +53,7 @@ router.post("/contact", async (req, res) => {
               </div>
 
               <div style="text-align: center; margin: 28px 0 10px 0;">
-                <a href="http://localhost:5173/admin" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);">
+                <a href="${frontendUrl}/admin" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);">
                   Open Admin Dashboard
                 </a>
               </div>

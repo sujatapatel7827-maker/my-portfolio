@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import API_BASE_URL from "../config";
 
 export default function AdminDashboard() {
     const [messages, setMessages] = useState([]);
@@ -59,7 +60,7 @@ export default function AdminDashboard() {
 
     const fetchMessages = async () => {
         try {
-            const response = await fetch("http://localhost:5000/api/admin/messages");
+            const response = await fetch(`${API_BASE_URL}/admin/messages`);
             const data = await response.json();
 
             if (data.success) {
@@ -88,7 +89,7 @@ export default function AdminDashboard() {
         setSuccessMessage("");
 
         try {
-            const response = await fetch(`http://localhost:5000/api/admin/messages/${selectedMsg._id}/reply`, {
+            const response = await fetch(`${API_BASE_URL}/admin/messages/${selectedMsg._id}/reply`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
