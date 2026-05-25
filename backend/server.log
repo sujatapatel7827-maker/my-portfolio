@@ -189,3 +189,34 @@ Starting server...
 ✅ Email sent successfully! MessageId: <fbce6a27-9ddb-2bc5-8f85-cd3a60977a89@portfolio.com>
 🔗 Ethereal Preview URL: https://ethereal.email/message/ahNNgo5FEF1TJ-OpahNNhaUBtdys4d3mAAAAAUNImBuwsLCo43RoU9IM6io
 ✅ Admin notification email sent successfully
+CWD: C:\JavaSpringBoot(v.s.)\my-portfolio\backend
+ENV FILE: C:\JavaSpringBoot(v.s.)\my-portfolio\backend\.env
+MONGO_URI: mongodb://localhost:27017/portfolioDB
+Starting server...
+🚀 Server running on port 5000
+🔗 Health check: http://localhost:5000/health
+✅ MongoDB Connected Successfully
+📥 Contact request received: {
+  name: 'Dev Checker',
+  email: 'dev-checker@testmail.com',
+  message: 'Hello! I am checking if the admin gets an email notification when I submit this form. Please verify.'
+}
+✅ Message saved successfully
+⚠️ SMTP credentials not configured in backend/.env. Creating temporary Ethereal Email account...
+✅ Email sent successfully! MessageId: <a67e3cc9-fdb0-ea33-4ab4-ed83c5e024dd@portfolio.com>
+🔗 Ethereal Preview URL: https://ethereal.email/message/ahNNro5FEF1TJ-d-ahNNsOuu9wSVTbKRAAAAAW3prWDqtG2XEIzBLj4tGyY
+✅ Admin notification email sent successfully
+CWD: C:\JavaSpringBoot(v.s.)\my-portfolio\backend
+ENV FILE: C:\JavaSpringBoot(v.s.)\my-portfolio\backend\.env
+MONGO_URI: mongodb://localhost:27017/portfolioDB
+Starting server...
+🚀 Server running on port 5000
+🔗 Health check: http://localhost:5000/health
+✅ MongoDB Connected Successfully
+CWD: C:\JavaSpringBoot(v.s.)\my-portfolio\backend
+ENV FILE: C:\JavaSpringBoot(v.s.)\my-portfolio\backend\.env
+MONGO_URI: mongodb://localhost:27017/portfolioDB
+Starting server...
+🚀 Server running on port 5000
+🔗 Health check: http://localhost:5000/health
+✅ MongoDB Connected Successfully

@@ -48,7 +48,7 @@ export default function About() {
             </div>
             <div>
               <h4>Education</h4>
-              <p>Bachelor of Computer Science</p>
+              <p>Bachelor of Computer Applications (BCA)</p>
             </div>
           </div>
 
@@ -58,7 +58,7 @@ export default function About() {
             </div>
             <div>
               <h4>Location</h4>
-              <p>Belagavi, Karnataka, India</p>
+              <p>New Delhi, India</p>
             </div>
           </div>
 
