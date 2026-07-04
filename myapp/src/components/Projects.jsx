@@ -206,7 +206,7 @@ export default function Projects() {
               <a href="https://github.com/sujatapatel7827-maker" target="_blank" rel="noopener noreferrer" className="project-link-btn">
                 <FaGithub /> Code
               </a>
-              <a href="https://my-web-ziva.vercel.app/" target="_blank" rel="noopener noreferrer" className="project-link-btn secondary">
+              <a href="https://my-web-ziva-milt.vercel.app/" target="_blank" rel="noopener noreferrer" className="project-link-btn secondary">
                 <FaExternalLinkAlt /> Live Demo
               </a>
             </div>
